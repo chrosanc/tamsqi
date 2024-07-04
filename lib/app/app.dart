@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online/nasabah/app/theme.dart';
+import 'package:online/app/theme.dart';
 import 'routes.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,6 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Tams Qi Online',
+      debugShowCheckedModeBanner: false,
       theme: appTheme,
       initialRoute: AppRoutes.splash,
       routes: AppPages.routes,

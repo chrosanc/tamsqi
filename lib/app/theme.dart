@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final ThemeData appTheme = ThemeData(
-  colorScheme: ColorScheme(
+  colorScheme: const ColorScheme(
     brightness: Brightness.light, // Atur brightness sesuai kebutuhan Anda
     primary: Color(0xFF009B0B), // Warna primer yang Anda pilih
     onPrimary: Colors.white, // Warna teks di atas warna primer
@@ -13,15 +13,27 @@ final ThemeData appTheme = ThemeData(
     surface: Colors.grey, // Warna permukaan (misalnya background card)
     onSurface: Colors.black, // Warna teks di atas permukaan
   ),
-  primaryColor: Color(0xFF009B0B), // Warna primer untuk aplikasi
+  scaffoldBackgroundColor: Colors.white,
+  primaryColor: const Color(0xFF009B0B), // Warna primer untuk aplikasi
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      textStyle: GoogleFonts.poppins(fontSize: 12), // Gaya teks di dalam tombol
+      minimumSize: const Size.fromHeight(52),
+      backgroundColor: Color(0xFF009B0B),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8)
+      ),
+      textStyle: GoogleFonts.poppins(fontSize: 12, color: Colors.white), // Gaya teks di dalam tombol
     ),
   ),
   fontFamily: 'Poppins', 
   textTheme: TextTheme(
-    titleLarge:  GoogleFonts.poppins(fontSize: 20),
-    titleMedium: GoogleFonts.poppins(fontSize: 16)
+    headlineLarge:  GoogleFonts.poppins(fontSize: 20, color: const Color(0xFF009B0B), fontWeight: FontWeight.bold),
+    
+    titleLarge: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold),
+    titleMedium: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold),
+    titleSmall: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold),
+
+    labelMedium: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)
+
   ),
 );
