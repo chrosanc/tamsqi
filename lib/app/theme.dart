@@ -14,6 +14,10 @@ final ThemeData appTheme = ThemeData(
     onSurface: Colors.black, // Warna teks di atas permukaan
   ),
   scaffoldBackgroundColor: Colors.white,
+  appBarTheme: AppBarTheme(
+    elevation: 7,
+    backgroundColor: Colors.white,
+    centerTitle: true,),
   primaryColor: const Color(0xFF009B0B), // Warna primer untuk aplikasi
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
@@ -33,7 +37,11 @@ final ThemeData appTheme = ThemeData(
     titleMedium: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold),
     titleSmall: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold),
 
-    labelMedium: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)
+    labelMedium: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+    labelSmall: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+
+    bodyMedium: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.normal, color: Colors.black),
+    bodySmall: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.normal, color: Colors.grey),
 
   ),
 );

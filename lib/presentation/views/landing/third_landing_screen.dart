@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online/app/routes.dart';
 import 'package:online/app/theme.dart';
 import 'package:online/core/constants/image_assets.dart';
 import 'package:online/core/constants/strings.dart';
@@ -25,7 +26,7 @@ class _ThirdLandingScreenState extends State<ThirdLandingScreen> {
               right: 34,
               child: ElevatedButton(
                 onPressed: (){
-              
+                  Navigator.pushNamed(context, AppRoutes.register_member);
                 }, 
                 child: Text(AppStrings.mulai, style: Theme.of(context).textTheme.labelMedium)),
             ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online/core/constants/image_assets.dart';
 import 'package:online/core/constants/strings.dart';
-import 'package:online/presentation/viewmodels/splash/splash_viewmodel.dart';
+import 'package:online/presentation/views/user/viewmodels/splash/splash_viewmodel.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
