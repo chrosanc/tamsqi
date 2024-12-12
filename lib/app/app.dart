@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
       title: 'Tams Qi Online',
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      initialRoute: AppRoutes.login,
+      initialRoute: AppRoutes.first_landing,
       routes: AppPages.routes,
     );
   }

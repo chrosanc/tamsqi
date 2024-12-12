@@ -3,8 +3,8 @@ import 'package:online/core/constants/binderbyte_constant.dart';
 
 class LocationService {
   static Future<http.Response> getProvinces() async {
-    var url = Uri.parse('${BinderbyteConstant.baseUrl}${BinderbyteConstant.provincesEndpoint}');
-    var response = await http.get(url, headers: {'Authorization': 'Bearer ${BinderbyteConstant.apiKey}'});
+    var url = Uri.parse('${BinderbyteConstant.baseUrl}${BinderbyteConstant.provincesEndpoint}?api_key=${BinderbyteConstant.apiKey}');
+    var response = await http.get(url);
     return response;
   }
 
@@ -20,8 +20,8 @@ class LocationService {
     return response;
   }
   
-    static Future<http.Response> getVillages(String regencyId) async {
-    var url = Uri.parse('${BinderbyteConstant.baseUrl}${BinderbyteConstant.subDistrictEndpoint}?api_key=${BinderbyteConstant.apiKey}&id_kecamatan=$regencyId');
+    static Future<http.Response> getVillages(String subDistrictId) async {
+    var url = Uri.parse('${BinderbyteConstant.baseUrl}${BinderbyteConstant.villageEndpoint}?api_key=${BinderbyteConstant.apiKey}&id_kecamatan=$subDistrictId');
     var response = await http.get(url, headers: {'Authorization': 'Bearer ${BinderbyteConstant.apiKey}'});
     return response;
   }

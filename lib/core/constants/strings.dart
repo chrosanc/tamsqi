@@ -18,6 +18,11 @@ class AppStrings {
   static const String desa = 'Desa';
   static const String rp = 'Rp. ';
 
+  static const String memberPending = 'Harap menunggu untuk Admin Lembaga untuk menghubungi Anda.';
+  static const String memberDitolak = 'Akun Member Anda ditolak.';
+  static const String memberDiterima = 'Akun Member Anda Diterima. Silahkan masuk dengan menggunakan Nomor Rekening yang sudah disediakan.';
+
+  static const String belumVerifikasi = 'Anda Belum melakukan Verifikasi Data Pinjaman';
   static const String norek_description = 'Silahkan Pilih rekening bank untuk melakukan peminjaman uang. Nama peminjam dan Nama pemilik rekening Bank harus sama. ';
 
 }

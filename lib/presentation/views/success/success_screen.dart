@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:online/app/routes.dart';
 import 'package:online/app/theme.dart';
 import 'package:online/core/constants/image_assets.dart';
 import 'package:online/core/constants/strings.dart';
-import 'package:online/presentation/views/user/main/navigation.dart';
+import 'package:online/presentation/views/main/navigation.dart';
 
 class SuccessScreen extends StatelessWidget {
-const SuccessScreen({ Key? key }) : super(key: key);
+  final String title;
+  final String subtitle;
+
+  const SuccessScreen({Key? key, required this.title, required this.subtitle})
+      : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 35),
@@ -17,15 +22,32 @@ const SuccessScreen({ Key? key }) : super(key: key);
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-          SvgPicture.asset(ImageAssets.success_icon),
-          const SizedBox(height: 48,),
-          Text('Terima Kasih Sudah Mendaftar', style: appTheme.textTheme.titleMedium,),
-          Text('Kantor Cabang terdekat segera menghubungin Nomer yang sudah terdaftar', style: appTheme.textTheme.bodySmall, textAlign: TextAlign.center,),
-          const SizedBox(height: 57,),
-          ElevatedButton(onPressed: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => UserNavigation()));
-          }, child: Text(AppStrings.berikutnya, style: appTheme.textTheme.labelMedium,))
-        ],),
+            SvgPicture.asset(ImageAssets.success_icon),
+            const SizedBox(
+              height: 48,
+            ),
+            Text(
+              title,
+              style: appTheme.textTheme.titleMedium,
+            ),
+            Text(
+              subtitle,
+              style: appTheme.textTheme.bodySmall,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 57,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, AppRoutes.userHome);
+                },
+                child: Text(
+                  AppStrings.berikutnya,
+                  style: appTheme.textTheme.labelMedium,
+                ))
+          ],
+        ),
       ),
     );
   }

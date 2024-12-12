@@ -13,4 +13,5 @@ class ImageAssets {
 
   static const String success_icon = 'assets/icons/success_icon.svg';
   static const String accepted_image = 'assets/images/accepted.png';
+  static const String pending_image = 'assets/images/pending.jpg';
 }

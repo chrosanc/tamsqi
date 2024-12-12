@@ -19,7 +19,6 @@ class BankSelectionModal extends StatelessWidget {
     ];
 
     return Container(
-      color: Colors.white,
       padding: EdgeInsets.all(16),
       child: Column(
         mainAxisSize: MainAxisSize.min,

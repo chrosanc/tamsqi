@@ -10,15 +10,12 @@ final ThemeData appTheme = ThemeData(
     onSecondary: Colors.white, // Warna teks di atas warna sekunder
     error: Colors.red, // Warna untuk error
     onError: Colors.white, // Warna teks di atas error
-    surface: Colors.grey, // Warna permukaan (misalnya background card)
+    surface: Colors.white, // Warna permukaan (misalnya background card)
     onSurface: Colors.black, // Warna teks di atas permukaan
   ),
   scaffoldBackgroundColor: Colors.white,
-  appBarTheme: AppBarTheme(
-    elevation: 7,
-    backgroundColor: Colors.white,
-    centerTitle: true,),
-  primaryColor: const Color(0xFF009B0B), // Warna primer untuk aplikasi
+  primaryColor: const Color(0xFF009B0B),
+
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       minimumSize: const Size.fromHeight(52),

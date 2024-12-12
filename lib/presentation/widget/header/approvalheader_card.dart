@@ -3,7 +3,8 @@ import 'package:online/app/theme.dart';
 import 'package:online/core/constants/image_assets.dart';
 
 class ApprovalheaderCard extends StatelessWidget {
-  const ApprovalheaderCard({Key? key}) : super(key: key);
+  final String limit;
+  const ApprovalheaderCard({super.key, required this.limit});
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,7 @@ class ApprovalheaderCard extends StatelessWidget {
                         fontSize: 12),
                   ),
                   Text(
-                    '5.000.000',
+                    limit,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16),

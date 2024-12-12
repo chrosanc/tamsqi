@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:online/app/theme.dart';
 
 class FormWidget extends StatefulWidget {
@@ -9,10 +10,27 @@ class FormWidget extends StatefulWidget {
   final Widget? suffixIcon;
   final bool obscureText;
   final bool enabled;
+  final int? maxLines;
+  final TextInputType? keyboardType;
+  final String? initialValue;
+  final List<TextInputFormatter>? inputFormatters;
   final Function()? onTap;
 
-
-  const FormWidget({ Key? key, this.title, this.hintText, this.controller, this.prefixIcon, this.suffixIcon, this.obscureText = false, this.onTap, this.enabled = true }) : super(key: key);
+  const FormWidget(
+      {Key? key,
+      this.title,
+      this.hintText,
+      this.controller,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.obscureText = false,
+      this.onTap,
+      this.maxLines,
+      this.enabled = true,
+      this.initialValue,
+      this.keyboardType,
+      this.inputFormatters})
+      : super(key: key);
 
   @override
   _FormWidgetState createState() => _FormWidgetState();
@@ -25,44 +43,48 @@ class _FormWidgetState extends State<FormWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          child: widget.title == null ? const SizedBox.shrink() : Column(
-            children: [
-              Text(widget.title!,style: appTheme.textTheme.titleSmall,),
-              const SizedBox(height: 8),
-
-            ],
-          )),
+            child: widget.title == null
+                ? const SizedBox.shrink()
+                : Column(
+                    children: [
+                      Text(
+                        widget.title!,
+                        style: appTheme.textTheme.titleSmall,
+                      ),
+                      const SizedBox(height: 8),
+                    ],
+                  )),
         GestureDetector(
           onTap: widget.onTap,
           child: Container(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.grey
-              ),
-              borderRadius: BorderRadius.circular(8)
-            ),
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(8)),
             child: TextFormField(
+              inputFormatters: widget.inputFormatters,
+              keyboardType: widget.keyboardType,
               controller: widget.controller,
               obscureText: widget.obscureText,
               enabled: widget.enabled,
+              maxLines: widget.maxLines,
               style: appTheme.textTheme.bodyMedium,
-              
+              initialValue: widget.initialValue,
               decoration: InputDecoration(
-                
-                hintText: widget.hintText,
-                hintStyle: appTheme.textTheme.bodySmall,
-                prefixIcon: widget.prefixIcon,
-                contentPadding: widget.suffixIcon != null ? EdgeInsets.symmetric(horizontal: 16, vertical: 16) : EdgeInsets.symmetric(horizontal: 16),
-                suffixIcon: widget.suffixIcon != null
-                    ? SizedBox(
-                        width: 24.0, // set the desired width
-                        height: 24.0, // set the desired height
-                        child: widget.suffixIcon,
-                      )
-                    : null,
-
-                border: InputBorder.none
-              ),
+                  hintText: widget.hintText,
+                  hintStyle: appTheme.textTheme.bodySmall,
+                  prefixIcon: widget.prefixIcon,
+                  contentPadding:
+                      widget.prefixIcon != null || widget.suffixIcon != null
+                          ? EdgeInsets.symmetric(horizontal: 16, vertical: 16)
+                          : EdgeInsets.symmetric(horizontal: 16),
+                  suffixIcon: widget.suffixIcon != null
+                      ? SizedBox(
+                          width: 24.0, // set the desired width
+                          height: 24.0, // set the desired height
+                          child: widget.suffixIcon,
+                        )
+                      : null,
+                  border: InputBorder.none),
             ),
           ),
         )

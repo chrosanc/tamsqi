@@ -4,6 +4,6 @@ class BinderbyteConstant {
   static const String provincesEndpoint = '/wilayah/provinsi';
   static const String regenciesEndpoint = '/wilayah/kabupaten';
   static const String subDistrictEndpoint = '/wilayah/kecamatan';
-  static const String vilalgeEndpoint = '/wilayah/kelurahan';
+  static const String villageEndpoint = '/wilayah/kelurahan';
 
 }
