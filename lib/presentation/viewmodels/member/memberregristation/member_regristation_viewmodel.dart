@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:online/core/networks/api_service.dart';
 import 'package:online/core/utils/user_preferences.dart';
 import 'package:online/data/models/anggota_model.dart';
-import 'package:online/data/models/binderbyte_model.dart';
 import 'package:online/presentation/widget/loading/loading_widget.dart';
-import 'package:online/presentation/widget/modal/member_registration_modals.dart';
 
 class MemberRegristationViewmodel extends ChangeNotifier {
   List<Anggota> _anggotaList = [];

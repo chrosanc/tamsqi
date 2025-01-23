@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:online/app/theme.dart';
 import 'package:online/core/constants/image_assets.dart';
 import 'package:online/core/constants/strings.dart';
-import 'package:online/presentation/viewmodels/main/credit/bank_account_viewmodel.dart';
 import 'package:online/presentation/viewmodels/main/credit/credit_request_viewmodel.dart';
 import 'package:online/presentation/widget/card/formcard_widget.dart';
 import 'package:online/presentation/widget/form/form_widget.dart';

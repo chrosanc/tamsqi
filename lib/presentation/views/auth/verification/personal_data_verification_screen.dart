@@ -8,7 +8,6 @@ import 'package:online/presentation/viewmodels/auth/personal_data_verification_v
 import 'package:online/presentation/views/auth/verification/identity_card_verification_screen.dart';
 import 'package:online/presentation/widget/form/form_widget.dart';
 import 'package:online/presentation/widget/imagepicker/imagepickercard_widget.dart';
-import 'package:online/presentation/widget/modal/personal_information_modal.dart';
 import 'package:online/presentation/widget/stepindicator/stepindicator_widget.dart';
 import 'package:provider/provider.dart';
 

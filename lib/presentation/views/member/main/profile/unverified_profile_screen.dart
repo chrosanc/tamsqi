@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:online/app/routes.dart';
 import 'package:online/core/constants/image_assets.dart';
 import 'package:online/presentation/viewmodels/member/main/home/member_home_viewmodel.dart';
-import 'package:online/presentation/widget/card/profile_card_widget.dart';
 import 'package:provider/provider.dart';
 
 class UnverifiedProfile extends StatelessWidget {

@@ -3,8 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:online/app/routes.dart';
 import 'package:online/app/theme.dart';
 import 'package:online/core/constants/image_assets.dart';
-import 'package:online/core/constants/strings.dart';
-import 'package:online/presentation/views/main/navigation.dart';
 
 class CreditSuccessScreen extends StatelessWidget {
   const CreditSuccessScreen({ Key? key }) : super(key: key);
