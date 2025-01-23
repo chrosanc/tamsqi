@@ -6,7 +6,7 @@ import 'package:online/presentation/viewmodels/main/home/home_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class UserPaymentScreen extends HookWidget {
-  const UserPaymentScreen({Key? key}) : super(key: key);
+  const UserPaymentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class UserPaymentScreen extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Pinjaman')),
+        title: const Center(child: Text('Pinjaman')),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

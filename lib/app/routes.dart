@@ -21,13 +21,13 @@ class AppRoutes {
 
 class AppPages {
   static final routes = {
-    AppRoutes.splash: (context) => SplashScreen(),
-    AppRoutes.first_landing: (context) => LandingContainer(),
-    AppRoutes.register_member: (context) => MemberRegistrationScreen(),
-    AppRoutes.login : (context) => LoginScreen(),
-    AppRoutes.userHome : (context) => UserNavigation(),
-    AppRoutes.unverifiedHome : (context) => UnverifiedNavigation(),
-    AppRoutes.member_registration_success : (context) => MemberRegistrationSuccessScreen(),
-    AppRoutes.credit_request_success : (context) => CreditSuccessScreen()
+    AppRoutes.splash: (context) => const SplashScreen(),
+    AppRoutes.first_landing: (context) => const LandingContainer(),
+    AppRoutes.register_member: (context) => const MemberRegistrationScreen(),
+    AppRoutes.login : (context) => const LoginScreen(),
+    AppRoutes.userHome : (context) => const UserNavigation(),
+    AppRoutes.unverifiedHome : (context) => const UnverifiedNavigation(),
+    AppRoutes.member_registration_success : (context) => const MemberRegistrationSuccessScreen(),
+    AppRoutes.credit_request_success : (context) => const CreditSuccessScreen()
   };
 }

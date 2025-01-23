@@ -84,7 +84,7 @@ class _FaceverificationScreenState extends State<FaceverificationScreen> {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                  builder: (_) => SuccessScreen(
+                  builder: (_) => const SuccessScreen(
                         title: 'Sukses menambahkan data diri',
                         subtitle:
                             'silahkan menunggu untuk informasi selanjutnya',
@@ -169,8 +169,8 @@ class _FaceverificationScreenState extends State<FaceverificationScreen> {
                 },
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(24),
+            const Padding(
+              padding: EdgeInsets.all(24),
               child: StepProgressIndicator(currentStep: 3),
             ),
           ],

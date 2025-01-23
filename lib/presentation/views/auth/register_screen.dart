@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:online/presentation/viewmodels/auth/auth_viewmodel.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,33 +21,33 @@ class RegisterScreen extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
-            Expanded(
+            const Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                      FormWidget(
                       title: 'Nama Pengguna',
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 24,
                     ),
                      FormWidget(
                        title: 'Email',
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 24,
                     ),
                      FormWidget(
                        title: 'Nomor Telepon',
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 24,
                     ),
                     FormWidget(
                       title: 'Password',
                       hintText: 'Password',
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 24,
                     ),
                   ],

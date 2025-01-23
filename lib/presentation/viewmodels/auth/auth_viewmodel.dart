@@ -4,7 +4,7 @@ import 'package:online/core/utils/user_preferences.dart';
 import 'package:online/presentation/widget/loading/loading_widget.dart';
 
 class AuthViewmodel extends ChangeNotifier {
-  ApiService _apiService = ApiService();
+  final ApiService _apiService = ApiService();
 
   //Login Controller
   final TextEditingController nomorRekeningController = TextEditingController();

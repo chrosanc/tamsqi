@@ -17,7 +17,7 @@ class FormWidget extends StatefulWidget {
   final Function()? onTap;
 
   const FormWidget(
-      {Key? key,
+      {super.key,
       this.title,
       this.hintText,
       this.controller,
@@ -29,8 +29,7 @@ class FormWidget extends StatefulWidget {
       this.enabled = true,
       this.initialValue,
       this.keyboardType,
-      this.inputFormatters})
-      : super(key: key);
+      this.inputFormatters});
 
   @override
   _FormWidgetState createState() => _FormWidgetState();
@@ -75,8 +74,8 @@ class _FormWidgetState extends State<FormWidget> {
                   prefixIcon: widget.prefixIcon,
                   contentPadding:
                       widget.prefixIcon != null || widget.suffixIcon != null
-                          ? EdgeInsets.symmetric(horizontal: 16, vertical: 16)
-                          : EdgeInsets.symmetric(horizontal: 16),
+                          ? const EdgeInsets.symmetric(horizontal: 16, vertical: 16)
+                          : const EdgeInsets.symmetric(horizontal: 16),
                   suffixIcon: widget.suffixIcon != null
                       ? SizedBox(
                           width: 24.0, // set the desired width

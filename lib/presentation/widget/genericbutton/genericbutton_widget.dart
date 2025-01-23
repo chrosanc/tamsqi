@@ -6,7 +6,7 @@ import 'package:online/core/constants/image_assets.dart';
 class GenericbuttonWidget extends StatelessWidget {
   final String title;
   final Function() onTap;
-const GenericbuttonWidget({ Key? key, required this.title, required this.onTap }) : super(key: key);
+const GenericbuttonWidget({ super.key, required this.title, required this.onTap });
 
   @override
   Widget build(BuildContext context){

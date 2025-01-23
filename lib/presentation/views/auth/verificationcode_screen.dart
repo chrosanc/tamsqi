@@ -5,7 +5,7 @@ import 'package:online/core/constants/strings.dart';
 import 'package:online/presentation/views/auth/verification/personal_data_verification_screen.dart';
 
 class VerificationcodeScreen extends StatefulWidget {
-  const VerificationcodeScreen({ Key? key }) : super(key: key);
+  const VerificationcodeScreen({ super.key });
 
   @override
   _VerificationcodeScreenState createState() => _VerificationcodeScreenState();
@@ -16,7 +16,7 @@ class _VerificationcodeScreenState extends State<VerificationcodeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Verifikasi'),
+        title: const Text('Verifikasi'),
       ),
       body: Center(
         child: Padding(
@@ -26,7 +26,7 @@ class _VerificationcodeScreenState extends State<VerificationcodeScreen> {
             children: [
               Text('Masukkan Kode Verifikasi' , style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: appTheme.colorScheme.primary),),
               const SizedBox(height: 15,),
-              Text('Kode verifikasi telah dikirim melalui SMS / Whatsapp', style: TextStyle(fontSize: 16, color: Colors.grey), textAlign: TextAlign.center,),
+              const Text('Kode verifikasi telah dikirim melalui SMS / Whatsapp', style: TextStyle(fontSize: 16, color: Colors.grey), textAlign: TextAlign.center,),
               const SizedBox(height: 45,),
               OtpTextField(
                 numberOfFields: 6,
@@ -40,12 +40,12 @@ class _VerificationcodeScreenState extends State<VerificationcodeScreen> {
                 },
               ),
               const SizedBox(height: 60,),
-              Text('Tidak Menerima OTP?', style: TextStyle(fontSize: 16), textAlign: TextAlign.center,),
-              Text('Kirim Ulang', style: TextStyle(fontSize: 16, color: Colors.grey), textAlign: TextAlign.center,),
-              SizedBox(height: 170,),
+              const Text('Tidak Menerima OTP?', style: TextStyle(fontSize: 16), textAlign: TextAlign.center,),
+              const Text('Kirim Ulang', style: TextStyle(fontSize: 16, color: Colors.grey), textAlign: TextAlign.center,),
+              const SizedBox(height: 170,),
           
               ElevatedButton(onPressed: (){
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> VerificationpersonaldataScreen()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const VerificationpersonaldataScreen()));
               }, child: Text(AppStrings.berikutnya, style: appTheme.textTheme.labelMedium,)),
           
           

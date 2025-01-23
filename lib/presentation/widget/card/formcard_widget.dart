@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class FormcardWidget extends StatelessWidget {
   final Widget child;
-const FormcardWidget({ Key? key, required this.child }) : super(key: key);
+const FormcardWidget({ super.key, required this.child });
 
   @override
   Widget build(BuildContext context){
@@ -15,7 +15,7 @@ const FormcardWidget({ Key? key, required this.child }) : super(key: key);
             color: Colors.black.withAlpha(25),
             spreadRadius: 1,
             blurRadius: 4,
-            offset: Offset(0, 2)
+            offset: const Offset(0, 2)
           )
         ]
       ),

@@ -4,7 +4,7 @@ import 'package:online/app/theme.dart';
 class BankSelectionModal extends StatelessWidget {
   final Function(String) onBankSelected;
 
-  const BankSelectionModal({Key? key, required this.onBankSelected}) : super(key: key);
+  const BankSelectionModal({super.key, required this.onBankSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class BankSelectionModal extends StatelessWidget {
     ];
 
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -27,7 +27,7 @@ class BankSelectionModal extends StatelessWidget {
             child: ListView.separated(
               shrinkWrap: true,
               itemCount: banks.length,
-              separatorBuilder: (context, index) => Divider(thickness: 1, color: Colors.grey,),
+              separatorBuilder: (context, index) => const Divider(thickness: 1, color: Colors.grey,),
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(banks[index], style: appTheme.textTheme.bodyMedium,),

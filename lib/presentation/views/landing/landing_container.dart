@@ -4,7 +4,7 @@ import 'package:online/presentation/views/landing/second_landing_screen.dart';
 import 'package:online/presentation/views/landing/third_landing_screen.dart';
 
 class LandingContainer extends StatefulWidget {
-  const LandingContainer({ Key? key }) : super(key: key);
+  const LandingContainer({ super.key });
 
   @override
   _LandingContainerState createState() => _LandingContainerState();
@@ -15,7 +15,7 @@ class _LandingContainerState extends State<LandingContainer> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        children: [
+        children: const [
         FirstLandingScreen(),
         SecondLandingScreen(),
         ThirdLandingScreen()

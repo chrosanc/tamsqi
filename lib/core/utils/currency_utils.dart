@@ -1,6 +1,5 @@
 import 'package:currency_formatter/currency_formatter.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 
 class CurrencyUtils {
 

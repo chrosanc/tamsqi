@@ -6,7 +6,7 @@ import 'package:online/core/constants/image_assets.dart';
 import 'package:online/core/constants/strings.dart';
 
 class MemberRegistrationSuccessScreen extends StatelessWidget {
-const MemberRegistrationSuccessScreen({ Key? key }) : super(key: key);
+const MemberRegistrationSuccessScreen({ super.key });
 
   @override
   Widget build(BuildContext context){

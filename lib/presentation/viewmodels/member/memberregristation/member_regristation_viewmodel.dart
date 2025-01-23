@@ -5,7 +5,7 @@ import 'package:online/data/models/anggota_model.dart';
 import 'package:online/presentation/widget/loading/loading_widget.dart';
 
 class MemberRegristationViewmodel extends ChangeNotifier {
-  List<Anggota> _anggotaList = [];
+  final List<Anggota> _anggotaList = [];
   bool _isLoading = false;
   final ApiService _apiService = ApiService();
 

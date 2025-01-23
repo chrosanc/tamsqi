@@ -4,7 +4,7 @@ import 'package:online/core/constants/image_assets.dart';
 import 'package:online/core/constants/strings.dart';
 
 class FirstLandingScreen extends StatefulWidget {
-  const FirstLandingScreen({Key? key}) : super(key: key);
+  const FirstLandingScreen({super.key});
 
   @override
   _FirstLandingScreenState createState() => _FirstLandingScreenState();

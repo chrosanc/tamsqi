@@ -9,7 +9,7 @@ import 'package:online/presentation/widget/stepindicator/stepindicator_widget.da
 import 'package:provider/provider.dart';
 
 class VerificationidentitycardScreen extends StatefulWidget {
-  const VerificationidentitycardScreen({Key? key}) : super(key: key);
+  const VerificationidentitycardScreen({super.key});
 
   @override
   _VerificationidentitycardScreenState createState() =>
@@ -24,7 +24,7 @@ class _VerificationidentitycardScreenState
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Data Pribadi'),
+        title: const Text('Data Pribadi'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -32,7 +32,7 @@ class _VerificationidentitycardScreenState
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              StepProgressIndicator(currentStep: 2),
+              const StepProgressIndicator(currentStep: 2),
               const SizedBox(
                 height: 35,
               ),
@@ -46,7 +46,7 @@ class _VerificationidentitycardScreenState
               ),
               ImagepickercardWidget(
                   image: viewModel.idCardImage,
-                  icon: Icon(Icons.upload_file),
+                  icon: const Icon(Icons.upload_file),
                   onTap: () {
                     viewModel.pickIdCardPhoto(context);
                   }),
@@ -59,7 +59,7 @@ class _VerificationidentitycardScreenState
               ),
               ImagepickercardWidget(
                   image: viewModel.idCardSelfieImage,
-                  icon: Icon(Icons.upload_file),
+                  icon: const Icon(Icons.upload_file),
                   onTap: () {
                     viewModel.pickIdCardSelfiePhoto(context);
                   }),
@@ -109,7 +109,7 @@ class _VerificationidentitycardScreenState
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => FaceverificationScreen()));
+                              builder: (context) => const FaceverificationScreen()));
                     }
                   },
                   child: Text(

@@ -10,8 +10,7 @@ class ProfileCardWidget extends StatelessWidget {
   final String? desc3;
 
   const ProfileCardWidget(
-      {Key? key, required this.name, this.desc1, this.desc2, this.desc3})
-      : super(key: key);
+      {super.key, required this.name, this.desc1, this.desc2, this.desc3});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class ProfileCardWidget extends StatelessWidget {
             BoxShadow(
                 color: Colors.black.withAlpha(15),
                 blurRadius: 12,
-                offset: Offset(0, 4))
+                offset: const Offset(0, 4))
           ],
           borderRadius: BorderRadius.circular(12)),
       child: Column(
@@ -59,7 +58,7 @@ class ProfileCardWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircleAvatar(

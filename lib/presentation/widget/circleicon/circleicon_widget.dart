@@ -4,9 +4,10 @@ import 'package:online/app/theme.dart';
 class CircleiconWidget extends StatelessWidget {
   final Widget icons;
   final String description;
-const CircleiconWidget({ Key? key, required this.icons, required this.description }) : super(key: key);
+const CircleiconWidget({ super.key, required this.icons, required this.description });
 
-Widget build(BuildContext context) {
+@override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Container(

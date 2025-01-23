@@ -6,7 +6,7 @@ import 'package:online/core/constants/strings.dart';
 import 'package:online/core/utils/user_preferences.dart';
 
 class ThirdLandingScreen extends StatefulWidget {
-  const ThirdLandingScreen({Key? key}) : super(key: key);
+  const ThirdLandingScreen({super.key});
 
   @override
   _ThirdLandingScreenState createState() => _ThirdLandingScreenState();

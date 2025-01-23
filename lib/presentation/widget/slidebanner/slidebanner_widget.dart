@@ -3,7 +3,7 @@ import 'package:online/app/theme.dart';
 
 class SlidebannerWidget extends StatefulWidget {
   final String title;
-  const SlidebannerWidget({Key? key, required this.title}) : super(key: key);
+  const SlidebannerWidget({super.key, required this.title});
 
   @override
   _SlidebannerWidgetState createState() => _SlidebannerWidgetState();
@@ -46,14 +46,14 @@ class _SlidebannerWidgetState extends State<SlidebannerWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(widget.title, style: appTheme.textTheme.titleSmall,),
-            Text('Lihat Semua')
+            const Text('Lihat Semua')
           ],
         ),
         const SizedBox(height: 5,),
         Stack(
           children: [
             
-            Container(
+            SizedBox(
               height: 125,
               child: PageView.builder(
                 controller: _pageController,
@@ -76,8 +76,8 @@ class _SlidebannerWidgetState extends State<SlidebannerWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: List.generate(colors.length, (index) {
               return AnimatedContainer(
-                duration: Duration(milliseconds: 300),
-                margin: EdgeInsets.symmetric(horizontal: 4.0, vertical: 10.0),
+                duration: const Duration(milliseconds: 300),
+                margin: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 10.0),
                 height: 6.0,
                 width: _currentPage == index ? 12.0 : 6.0,
                 decoration: BoxDecoration(

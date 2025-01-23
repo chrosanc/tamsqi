@@ -7,7 +7,7 @@ import 'package:online/presentation/views/main/profile/profile_screen.dart';
 import 'package:provider/provider.dart';
 
 class UserNavigation extends StatelessWidget {
-  const UserNavigation({Key? key}) : super(key: key);
+  const UserNavigation({super.key});
 
   static const List<Widget> _widgetOptions = <Widget>[
     UserHomeScreen(),

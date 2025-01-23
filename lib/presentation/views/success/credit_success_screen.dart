@@ -5,7 +5,7 @@ import 'package:online/app/theme.dart';
 import 'package:online/core/constants/image_assets.dart';
 
 class CreditSuccessScreen extends StatelessWidget {
-  const CreditSuccessScreen({ Key? key }) : super(key: key);
+  const CreditSuccessScreen({ super.key });
 
   @override
   Widget build(BuildContext context){

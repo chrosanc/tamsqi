@@ -5,7 +5,7 @@ import 'package:online/core/constants/strings.dart';
 import '../../viewmodels/splash/splash_viewmodel.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   _SplashScreenState createState() => _SplashScreenState();

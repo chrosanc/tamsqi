@@ -10,7 +10,7 @@ import 'package:online/presentation/widget/modal/bank_selection_modal.dart';
 import 'package:provider/provider.dart';
 
 class AccountnumberScreen extends StatelessWidget {
-  const AccountnumberScreen({Key? key}) : super(key: key);
+  const AccountnumberScreen({super.key});
 
   void _showBankSelectionModal(BuildContext context, CreditRequestViewmodel viewModel) {
     showModalBottomSheet(
@@ -32,10 +32,10 @@ class AccountnumberScreen extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Rekening Bank'),
+          title: const Text('Rekening Bank'),
         ),
         body: SingleChildScrollView(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
               child:  Column(
                 children: [
                   FormcardWidget(
@@ -52,7 +52,7 @@ class AccountnumberScreen extends StatelessWidget {
                           enabled: false,
                           controller: viewModel.bankController,
                           onTap: () => _showBankSelectionModal(context, viewModel),
-                          suffixIcon: Center(child: SvgPicture.asset(ImageAssets.arrow_right, width: 24, colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),),),
+                          suffixIcon: Center(child: SvgPicture.asset(ImageAssets.arrow_right, width: 24, colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),),),
                           hintText: 'Bank',
                         ),
                         const SizedBox(height: 16,),

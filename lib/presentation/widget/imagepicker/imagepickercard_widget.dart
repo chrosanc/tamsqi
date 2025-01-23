@@ -10,12 +10,11 @@ class ImagepickercardWidget extends StatefulWidget {
   final Function() onTap;
 
   const ImagepickercardWidget(
-      {Key? key,
+      {super.key,
       this.image,
       this.title,
       required this.icon,
-      required this.onTap})
-      : super(key: key);
+      required this.onTap});
 
   @override
   _ImagepickercardWidgetState createState() => _ImagepickercardWidgetState();
@@ -33,7 +32,7 @@ class _ImagepickercardWidgetState extends State<ImagepickercardWidget> {
                     widget.title!,
                     style: appTheme.textTheme.titleSmall,
                   )
-                : SizedBox.shrink()),
+                : const SizedBox.shrink()),
         const SizedBox(height: 12),
         GestureDetector(
           onTap: widget.onTap,
@@ -41,7 +40,7 @@ class _ImagepickercardWidgetState extends State<ImagepickercardWidget> {
             width: MediaQuery.of(context).size.width,
             height: 152,
             decoration: BoxDecoration(
-                color: Color(0xFFFAFAFA),
+                color: const Color(0xFFFAFAFA),
                 border: Border.all(color: Colors.black),
                 borderRadius: BorderRadius.circular(12)),
             child: widget.image != null

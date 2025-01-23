@@ -6,7 +6,7 @@ import 'package:online/presentation/viewmodels/member/main/home/member_home_view
 import 'package:provider/provider.dart';
 
 class UnverifiedProfile extends StatelessWidget {
-  const UnverifiedProfile({Key? key}) : super(key: key);
+  const UnverifiedProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class UnverifiedProfile extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
@@ -27,7 +27,7 @@ class UnverifiedProfile extends StatelessWidget {
                       BoxShadow(
                           blurRadius: 12,
                           color: Colors.black.withAlpha(15),
-                          offset: Offset(0, 4))
+                          offset: const Offset(0, 4))
                     ]),
                 child: _rowMenu('Daftar Akun', () {
                   Navigator.pushNamed(context, AppRoutes.login);
@@ -37,7 +37,7 @@ class UnverifiedProfile extends StatelessWidget {
                 height: 14,
               ),
               Container(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
@@ -45,7 +45,7 @@ class UnverifiedProfile extends StatelessWidget {
                       BoxShadow(
                           blurRadius: 12,
                           color: Colors.black.withAlpha(15),
-                          offset: Offset(0, 4))
+                          offset: const Offset(0, 4))
                     ]),
                 child: Column(
                   children: [

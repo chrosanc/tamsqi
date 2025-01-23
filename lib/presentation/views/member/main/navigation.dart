@@ -7,7 +7,7 @@ import 'package:online/presentation/viewmodels/main/navigation_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class UnverifiedNavigation extends StatelessWidget {
-  const UnverifiedNavigation({Key? key}) : super(key: key);
+  const UnverifiedNavigation({super.key});
 
   static const List<Widget> _widgetOptions = <Widget>[
     UnverifiedHome(),

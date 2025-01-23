@@ -12,7 +12,7 @@ import 'package:online/presentation/widget/stepindicator/stepindicator_widget.da
 import 'package:provider/provider.dart';
 
 class VerificationpersonaldataScreen extends StatefulWidget {
-  const VerificationpersonaldataScreen({Key? key}) : super(key: key);
+  const VerificationpersonaldataScreen({super.key});
 
   @override
   _VerificationpersonaldataScreenState createState() =>
@@ -27,7 +27,7 @@ class _VerificationpersonaldataScreenState
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Data Pribadi'),
+        title: const Text('Data Pribadi'),
         automaticallyImplyLeading: true,
       ),
       body: SingleChildScrollView(
@@ -35,7 +35,7 @@ class _VerificationpersonaldataScreenState
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 35),
         child: Column(
           children: [
-            StepProgressIndicator(currentStep: 1),
+            const StepProgressIndicator(currentStep: 1),
             const SizedBox(
               height: 24,
             ),
@@ -190,7 +190,7 @@ class _VerificationpersonaldataScreenState
                 onTap: () {
                   viewModel.selectBusinessPhoto(context);
                 },
-                icon: Icon(Icons.upload_file)),
+                icon: const Icon(Icons.upload_file)),
             const SizedBox(
               height: 16,
             ),

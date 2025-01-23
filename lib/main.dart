@@ -27,6 +27,6 @@ void main() {
           ChangeNotifierProvider(create: (_) => NavigationViewmodel()),
           ChangeNotifierProvider(create: (_) => BankAccountViewModel()),
         ],
-        child: MyApp(),
+        child: const MyApp(),
       )));
 }

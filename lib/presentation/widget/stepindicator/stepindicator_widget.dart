@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class StepProgressIndicator extends StatelessWidget {
   final int currentStep;
 
-  StepProgressIndicator({required this.currentStep});
+  const StepProgressIndicator({super.key, required this.currentStep});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class StepProgressIndicator extends StatelessWidget {
               _buildStepText('Verifikasi\nWajah', 3),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Row(

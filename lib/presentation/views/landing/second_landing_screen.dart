@@ -4,7 +4,7 @@ import 'package:online/core/constants/image_assets.dart';
 import 'package:online/core/constants/strings.dart';
 
 class SecondLandingScreen extends StatefulWidget {
-  const SecondLandingScreen({Key? key}) : super(key: key);
+  const SecondLandingScreen({super.key});
 
   @override
   _SecondLandingScreenState createState() => _SecondLandingScreenState();
@@ -65,7 +65,7 @@ class _SecondLandingScreenState extends State<SecondLandingScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(ImageAssets.second_landing_image),
-                SizedBox(
+                const SizedBox(
                   height: 28,
                 ),
                 Padding(

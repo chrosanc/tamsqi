@@ -1,4 +1,3 @@
-import 'package:currency_formatter/currency_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:online/app/routes.dart';
@@ -13,7 +12,7 @@ import 'package:online/presentation/widget/modal/member_registration_modals.dart
 import 'package:provider/provider.dart';
 
 class MemberRegistrationScreen extends StatefulWidget {
-  const MemberRegistrationScreen({Key? key}) : super(key: key);
+  const MemberRegistrationScreen({super.key});
 
   @override
   _MemberRegistrationScreenState createState() =>

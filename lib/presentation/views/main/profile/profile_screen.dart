@@ -8,7 +8,7 @@ import 'package:online/presentation/widget/card/profile_card_widget.dart';
 import 'package:provider/provider.dart';
 
 class UserProfileScreen extends StatelessWidget {
-  const UserProfileScreen({Key? key}) : super(key: key);
+  const UserProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class UserProfileScreen extends StatelessWidget {
                 height: 14,
               ),
               Container(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
@@ -36,7 +36,7 @@ class UserProfileScreen extends StatelessWidget {
                       BoxShadow(
                           blurRadius: 12,
                           color: Colors.black.withAlpha(15),
-                          offset: Offset(0, 4))
+                          offset: const Offset(0, 4))
                     ]),
                 child: Column(
                   children: [
@@ -56,7 +56,7 @@ class UserProfileScreen extends StatelessWidget {
                 height: 24,
               ),
               Container(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
@@ -64,7 +64,7 @@ class UserProfileScreen extends StatelessWidget {
                       BoxShadow(
                           blurRadius: 12,
                           color: Colors.black.withAlpha(15),
-                          offset: Offset(0, 4))
+                          offset: const Offset(0, 4))
                     ]),
                 child: Column(
                   children: [
@@ -88,7 +88,7 @@ class UserProfileScreen extends StatelessWidget {
                 height: 24,
               ),
               Container(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
@@ -96,7 +96,7 @@ class UserProfileScreen extends StatelessWidget {
                       BoxShadow(
                           blurRadius: 12,
                           color: Colors.black.withAlpha(15),
-                          offset: Offset(0, 4))
+                          offset: const Offset(0, 4))
                     ]),
                 child: Column(
                   children: [

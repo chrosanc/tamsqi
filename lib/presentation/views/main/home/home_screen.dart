@@ -1,4 +1,3 @@
-import 'package:currency_formatter/currency_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:online/app/theme.dart';
@@ -18,7 +17,7 @@ import 'package:provider/provider.dart';
 import '../credit/credit_request_screen.dart';
 
 class UserHomeScreen extends HookWidget {
-  const UserHomeScreen({Key? key}) : super(key: key);
+  const UserHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

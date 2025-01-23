@@ -4,13 +4,13 @@ import 'package:online/presentation/views/main/payment/payment_list_screen.dart'
 import 'package:online/presentation/widget/card/formcard_widget.dart';
 
 class DetailPaymentScreen extends StatelessWidget {
-  const DetailPaymentScreen({Key? key}) : super(key: key);
+  const DetailPaymentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail Pinjaman'),
+        title: const Text('Detail Pinjaman'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -37,13 +37,13 @@ class DetailPaymentScreen extends StatelessWidget {
                           const SizedBox(
                             width: 5,
                           ),
-                          Text('1/6 Bulan')
+                          const Text('1/6 Bulan')
                         ],
                       ),
                       const SizedBox(
                         height: 17,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -67,7 +67,7 @@ class DetailPaymentScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Detail Pinjaman',
                       style: TextStyle(
                           color: Colors.grey, fontWeight: FontWeight.bold),
@@ -80,7 +80,7 @@ class DetailPaymentScreen extends StatelessWidget {
                       children: [
                         Text('Kode Pinjaman',
                             style: appTheme.textTheme.bodySmall),
-                        Text('76HG5AANKJ')
+                        const Text('76HG5AANKJ')
                       ],
                     ),
                     const SizedBox(
@@ -91,7 +91,7 @@ class DetailPaymentScreen extends StatelessWidget {
                       children: [
                         Text('Tanggal Pinjaman',
                             style: appTheme.textTheme.bodySmall),
-                        Text('13 Juni 2024, 20:59 WIB')
+                        const Text('13 Juni 2024, 20:59 WIB')
                       ],
                     ),
                     const SizedBox(
@@ -102,7 +102,7 @@ class DetailPaymentScreen extends StatelessWidget {
                       children: [
                         Text('Status Pinjaman',
                             style: appTheme.textTheme.bodySmall),
-                        Text('Dalam Proses Verifikasi')
+                        const Text('Dalam Proses Verifikasi')
                       ],
                     )
                   ],
@@ -115,7 +115,7 @@ class DetailPaymentScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Rincian Biaya',
                       style: TextStyle(
                           color: Colors.grey, fontWeight: FontWeight.bold),
@@ -128,7 +128,7 @@ class DetailPaymentScreen extends StatelessWidget {
                       children: [
                         Text('Jumlah Pinjaman',
                             style: appTheme.textTheme.bodySmall),
-                        Text('80.000.000')
+                        const Text('80.000.000')
                       ],
                     ),
                     const SizedBox(
@@ -138,7 +138,7 @@ class DetailPaymentScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text('Bunga', style: appTheme.textTheme.bodySmall),
-                        Text('2.000.000')
+                        const Text('2.000.000')
                       ],
                     ),
                     const SizedBox(
@@ -149,7 +149,7 @@ class DetailPaymentScreen extends StatelessWidget {
                       children: [
                         Text('Periode Pinjaman',
                             style: appTheme.textTheme.bodySmall),
-                        Text('6 Bulan')
+                        const Text('6 Bulan')
                       ],
                     )
                   ],
@@ -162,7 +162,7 @@ class DetailPaymentScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Kode Kantor',
                       style: TextStyle(
                           color: Colors.grey, fontWeight: FontWeight.bold),
@@ -175,7 +175,7 @@ class DetailPaymentScreen extends StatelessWidget {
                       children: [
                         Text('Kode Kantor',
                             style: appTheme.textTheme.bodySmall),
-                        Text('76HG5AANKJ')
+                        const Text('76HG5AANKJ')
                       ],
                     ),
                     const SizedBox(
@@ -186,7 +186,7 @@ class DetailPaymentScreen extends StatelessWidget {
                       children: [
                         Text('Tanggal Alamat',
                             style: appTheme.textTheme.bodySmall),
-                        Text('13 Juni 2024, 20:59 WIB')
+                        const Text('13 Juni 2024, 20:59 WIB')
                       ],
                     ),
                   ],
@@ -196,7 +196,7 @@ class DetailPaymentScreen extends StatelessWidget {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentListScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const PaymentListScreen()));
                     },
                     child: Text(
                       'Bayar',

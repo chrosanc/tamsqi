@@ -7,7 +7,7 @@ import 'package:online/presentation/views/main/payment/detail_payment_screen.dar
 class DetailPaymentCardWidget extends StatelessWidget {
   final Function()? onClick;
 
-  const DetailPaymentCardWidget({Key? key, this.onClick}) : super(key: key);
+  const DetailPaymentCardWidget({super.key, this.onClick});
 
   @override
   Widget build(BuildContext context) {

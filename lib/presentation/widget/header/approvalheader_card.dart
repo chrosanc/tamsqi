@@ -59,14 +59,14 @@ class ApprovalheaderCard extends StatelessWidget {
                         fontSize: 24),
                   ),
                   const SizedBox(height: 12,),
-                  Text(
+                  const Text(
                     'Limit Peminjaman Anda',
                     style: TextStyle(
                         fontSize: 12),
                   ),
                   Text(
                     limit,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16),
                   ),                  

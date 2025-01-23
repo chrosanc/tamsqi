@@ -10,7 +10,7 @@ import 'package:online/presentation/widget/slidebanner/slidebanner_widget.dart';
 import 'package:provider/provider.dart';
 
 class UnverifiedHome extends HookWidget {
-  const UnverifiedHome({Key? key}) : super(key: key);
+  const UnverifiedHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +20,7 @@ class UnverifiedHome extends HookWidget {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         viewModel.getMember(context);
       });
+      return null;
     }, []);
 
     return Scaffold(
@@ -84,17 +85,17 @@ class UnverifiedHome extends HookWidget {
               const SizedBox(
                 height: 12,
               ),
-              SlidebannerWidget(
+              const SlidebannerWidget(
                 title: 'Syarat',
               ),
               const SizedBox(
                 height: 12,
               ),
-              SlidebannerWidget(title: 'Company Profile'),
+              const SlidebannerWidget(title: 'Company Profile'),
               const SizedBox(
                 height: 12,
               ),
-              SlidebannerWidget(
+              const SlidebannerWidget(
                 title: 'Video',
               )
             ],

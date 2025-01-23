@@ -5,7 +5,7 @@ class HeaderCard extends StatelessWidget {
   final String title1;
   final String title2;
   final Widget bottomChild;
-  const HeaderCard({Key? key, required this.title1, required this.title2, required this.bottomChild}) : super(key: key);
+  const HeaderCard({super.key, required this.title1, required this.title2, required this.bottomChild});
 
   @override
   Widget build(BuildContext context) {

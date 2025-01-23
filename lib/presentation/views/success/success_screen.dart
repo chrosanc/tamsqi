@@ -9,8 +9,7 @@ class SuccessScreen extends StatelessWidget {
   final String title;
   final String subtitle;
 
-  const SuccessScreen({Key? key, required this.title, required this.subtitle})
-      : super(key: key);
+  const SuccessScreen({super.key, required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {

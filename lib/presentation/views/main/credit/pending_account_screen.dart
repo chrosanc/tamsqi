@@ -22,10 +22,10 @@ class PendingAccountScreen extends StatelessWidget {
                 size: 80,
                 color: appTheme.colorScheme.primary,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 'Status Pinjaman Anda sedang dalam Proses, silahkan tunggu notifikasi dari Admin.',
                 textAlign: TextAlign.center,
               )

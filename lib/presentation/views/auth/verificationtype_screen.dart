@@ -3,7 +3,7 @@ import 'package:online/app/theme.dart';
 import 'package:online/presentation/views/auth/verificationcode_screen.dart';
 
 class VerificationtypeScreen extends StatefulWidget {
-  const VerificationtypeScreen({ Key? key }) : super(key: key);
+  const VerificationtypeScreen({ super.key });
 
   @override
   _VerificationtypeScreenState createState() => _VerificationtypeScreenState();
@@ -14,7 +14,7 @@ class _VerificationtypeScreenState extends State<VerificationtypeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Verifikasi'),
+        title: const Text('Verifikasi'),
       ),
       body: Center(
         child: Padding(
@@ -24,12 +24,12 @@ class _VerificationtypeScreenState extends State<VerificationtypeScreen> {
               const SizedBox(height: 12,),
             Text('Pilih Metode' , style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: appTheme.colorScheme.primary),),
             const SizedBox(height: 15,),
-            Text('Anda dapat memilih metode untuk mendapatkan OTP', style: TextStyle(fontSize: 16, color: Colors.grey), textAlign: TextAlign.center,),
+            const Text('Anda dapat memilih metode untuk mendapatkan OTP', style: TextStyle(fontSize: 16, color: Colors.grey), textAlign: TextAlign.center,),
             const SizedBox(height: 24,),
           
             GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> VerificationcodeScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> const VerificationcodeScreen()));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
@@ -39,8 +39,8 @@ class _VerificationtypeScreenState extends State<VerificationtypeScreen> {
                   ),
                   borderRadius: BorderRadius.circular(12)
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 17, horizontal: 17),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 17, horizontal: 17),
                   child: Text('Whatsapp'),
                 ),
               ),
@@ -50,7 +50,7 @@ class _VerificationtypeScreenState extends State<VerificationtypeScreen> {
 
             GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> VerificationcodeScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> const VerificationcodeScreen()));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
@@ -60,8 +60,8 @@ class _VerificationtypeScreenState extends State<VerificationtypeScreen> {
                   ),
                   borderRadius: BorderRadius.circular(12)
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 17, horizontal: 17),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 17, horizontal: 17),
                   child: Text('SMS'),
                 ),
               ),
