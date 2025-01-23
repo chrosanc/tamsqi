@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:online/core/networks/api_service.dart';
 import 'package:online/data/models/credit_request_model.dart';
@@ -8,7 +7,7 @@ const List<String> periods = <String>['3 Bulan', '6 Bulan', '12 Bulan'];
 
 class CreditRequestViewmodel extends ChangeNotifier {
   //PageCreditRequest
-  ApiService _apiService = ApiService();
+  final ApiService _apiService = ApiService();
   TextEditingController rekeningBankController = TextEditingController();
 
   //PageRekeningBank
@@ -43,7 +42,7 @@ class CreditRequestViewmodel extends ChangeNotifier {
   }
 
   Future<bool> submitCredit(
-      BuildContext context, int interest, int total, int period) async {
+      BuildContext context, String interest, String total, String period) async {
     // Cegah double submission
     if (_isLoading) return false;
     _isLoading = true;
@@ -61,9 +60,9 @@ class CreditRequestViewmodel extends ChangeNotifier {
       _creditRequest = CreditRequest(
         id: 0,
         kodePinjaman: 'kode',
-        bungaPinjaman: interest.toDouble(),
-        jumlahPinjaman: total.toDouble(),
-        periodePinjaman: period.toString(),
+        bungaPinjaman: interest,
+        jumlahPinjaman: total,
+        periodePinjaman: period,
         periodeSaatIni: 0,
         namaRekening: nameController.text.trim(),
         namaBank: bankController.text.trim(),
@@ -84,12 +83,16 @@ class CreditRequestViewmodel extends ChangeNotifier {
         return false;
       }
     } catch (e) {
-      print(e);
+      if(e is Exception && context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+      }
       return false;
     } finally {
       // Pastikan loading state dihentikan dan dialog loading ditutup
       _isLoading = false;
-      LoadingWidget.hideloadingDialog(context);
+      if(context.mounted){
+        LoadingWidget.hideloadingDialog(context);
+      }
     }
   }
 

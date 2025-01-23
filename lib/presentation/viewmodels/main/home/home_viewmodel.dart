@@ -1,4 +1,3 @@
-import 'package:currency_formatter/currency_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:online/core/networks/api_service.dart';
 import 'package:online/data/models/credit_request_model.dart';
@@ -34,11 +33,24 @@ class HomeViewmodel extends ChangeNotifier {
         notifyListeners();
       }
     } catch (e) {
-      _showError(context, e);
+      if(context.mounted){
+        _showError(context, e);
+      }
     } finally {
-      _setLoadingState(context, false);
+      if(context.mounted){
+        _setLoadingState(context, false);
+
+      }
     }
   }
+
+  // Future<int> countCredit() async {
+  //   if(_userCredit == null){
+  //     return 0;
+  //   }
+  //   final totalCredit = double.tryParse(_userCredit?.jumlahPinjaman ?? '0') ?? 0;
+  //   final
+  // }
 
   void _setLoadingState(BuildContext context, bool isLoading) {
     _isLoading = isLoading;

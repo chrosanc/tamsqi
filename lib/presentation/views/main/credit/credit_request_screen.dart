@@ -1,4 +1,3 @@
-import 'package:currency_formatter/currency_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:online/app/theme.dart';
@@ -33,7 +32,8 @@ class _CreditAcceptedScreenState extends State<CreditAcceptedScreen> {
   Widget build(BuildContext context) {
     final viewModel = Provider.of<CreditRequestViewmodel>(context);
     final homeViewModel = Provider.of<HomeViewmodel>(context);
-    final limit = double.tryParse(homeViewModel.userData!.limitPinjaman!)!.toInt();
+    final limit =
+        double.tryParse(homeViewModel.userData!.limitPinjaman!)!.toInt();
     const int minCredit = 400000;
     final int maxCredit = limit;
 
@@ -60,19 +60,22 @@ class _CreditAcceptedScreenState extends State<CreditAcceptedScreen> {
               onPressed: () async {
                 bool isSuccess = await viewModel.submitCredit(
                     context,
-                    interest,
-                    sliderValue.toInt(),
-                    int.tryParse(selectedPeriod.split(' ')[0])!);
+                    interest.toString(),
+                    sliderValue.toString(),
+                    selectedPeriod);
 
-                if (isSuccess) {
+                if (isSuccess && context.mounted) {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (_) => const SuccessScreen(
                               title: 'Sukses',
                               subtitle: 'Harap tunggu proses pengajuan')));
-                } else{
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Pengajuan Gagal. Silahkan coba lagi")));
+                } else {
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text("Pengajuan Gagal. Silahkan coba lagi")));
+                  }
                 }
               },
               child: Text(
@@ -139,7 +142,7 @@ class _CreditAcceptedScreenState extends State<CreditAcceptedScreen> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AccountnumberScreen()),
+                MaterialPageRoute(builder: (context) => const AccountnumberScreen()),
               );
             },
             enabled: false,

@@ -79,7 +79,7 @@ class UserHomeScreen extends HookWidget {
 
   Widget _buildHeader(HomeViewmodel viewModel) {
     final userData = viewModel.userData!;
-    const headerTitle1 = 'Status Pinjaman Anda';
+    const headerTitle1 = 'Status Akun Anda';
     const defaultBottomChild = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -98,49 +98,73 @@ class UserHomeScreen extends HookWidget {
       ],
     );
 
-    if (userData.status == 'pending') {
-      return const HeaderCard(
+    switch (userData.status) {
+      case 'pending':
+        return const HeaderCard(
           title1: headerTitle1,
           title2: 'Dalam Verifikasi',
-          bottomChild: defaultBottomChild);
-    } else if (userData.status == 'ditolak') {
-      return const HeaderCard(
+          bottomChild: defaultBottomChild,
+        );
+      case 'ditolak':
+        return const HeaderCard(
           title1: headerTitle1,
           title2: 'Ditolak',
-          bottomChild: defaultBottomChild);
-    }  else if (viewModel.userCredit?.statusPengajuan == 'Diterima' && viewModel.userData!.idPengajuanPinjaman != null) {
-      return HeaderCard(
-        title1: 'Tagihan Belum Dibayar',
-        title2: CurrencyUtils()
-            .currencyFormat(viewModel.userCredit!.jumlahPinjaman.toInt()),
-        bottomChild: defaultBottomChild,
-      );
-    } else if (viewModel.userCredit?.statusPengajuan != 'Diterima' && viewModel.userData!.idPengajuanPinjaman != null) {
-      return HeaderCard(
-        title1: 'Status Pengajuan Anda',
-        title2: viewModel.userCredit?.statusPengajuan ?? 'Tidak Diketahui',
-        bottomChild: defaultBottomChild,
-      );
-    } else {
-      return HeaderCard(
-        title1: 'Limit Pinjaman Anda',
-        title2: CurrencyUtils().currencyFormat(double.tryParse(viewModel.userData!.limitPinjaman!)!.toInt()) ,
-        bottomChild: defaultBottomChild,
-      );
+          bottomChild: defaultBottomChild,
+        );
+      case 'diterima':
+        if (viewModel.userCredit?.statusPengajuan == 'Diterima' &&
+            userData.idPengajuanPinjaman != null) {
+          return HeaderCard(
+            title1: 'Tagihan Belum Dibayar',
+            title2: CurrencyUtils().currencyFormat(
+                double.tryParse(viewModel.userCredit!.jumlahPinjaman)!.toInt()),
+            bottomChild: defaultBottomChild,
+          );
+        } else if (viewModel.userCredit?.statusPengajuan != 'Diterima' &&
+            userData.idPengajuanPinjaman != null) {
+          return HeaderCard(
+              title1: 'Status Peminjaman Anda',
+              title2:
+                  viewModel.userCredit?.statusPengajuan! ?? 'Tidak diketahui',
+              bottomChild: defaultBottomChild);
+        } else {
+          return const HeaderCard(
+            title1: 'Status Pengajuan Anda',
+            title2: 'Diterima',
+            bottomChild: defaultBottomChild,
+          );
+        }
+      default:
+        return HeaderCard(
+          title1: 'Limit Pinjaman Anda',
+          title2: CurrencyUtils().currencyFormat(
+              double.tryParse(userData.limitPinjaman!)!.toInt()),
+          bottomChild: defaultBottomChild,
+        );
     }
   }
 
   Widget _buildActionButton(BuildContext context, HomeViewmodel viewModel) {
-    if(viewModel.userCredit!.statusPengajuan != 'Diterima' && viewModel.userData!.idPengajuanPinjaman != null) {
+    final userData = viewModel.userData;
+    final userCredit = viewModel.userCredit;
+
+    if (userCredit?.statusPengajuan != 'Diterima' &&
+        userData?.idPengajuanPinjaman != null) {
       return const SizedBox.shrink();
-    } else {
-      return GenericbuttonWidget(
-        onTap: () => _handleActionButtonTap(context, viewModel),
-        title: viewModel.userCredit?.statusPengajuan == 'Diterima'
-            ? 'Bayar Sekarang'
-            : 'Pinjam Sekarang',
-      );
     }
+
+    if (userData?.status != null && userData?.status == 'ditolak') {
+      return const SizedBox.shrink();
+    }
+
+    return GenericbuttonWidget(
+      onTap: () => _handleActionButtonTap(context, viewModel),
+      title: userData?.idPengajuanPinjaman != null &&
+              userCredit?.statusPengajuan == 'Diterima' &&
+              userData?.status == 'diterima'
+          ? 'Bayar Sekarang'
+          : 'Pinjam Sekarang',
+    );
   }
 
   void _handleActionButtonTap(BuildContext context, HomeViewmodel viewModel) {
@@ -149,7 +173,9 @@ class UserHomeScreen extends HookWidget {
     final navigationViewModel =
         Provider.of<NavigationViewmodel>(context, listen: false);
 
-    if (userData!.idDetailPribadi == null) {
+    if (userData == null) return;
+
+    if (userData.idDetailPribadi == null) {
       Navigator.push(
         context,
         MaterialPageRoute(

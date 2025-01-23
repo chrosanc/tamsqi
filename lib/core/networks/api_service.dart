@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:http/http.dart' as http;
 import 'package:online/core/utils/user_preferences.dart';
 import 'package:online/data/models/anggota_model.dart';
 import 'package:online/data/models/credit_request_model.dart';
@@ -8,10 +7,11 @@ import 'package:online/data/models/face_verification_model.dart';
 import 'package:online/data/models/identity_card_model.dart';
 import 'package:online/data/models/personal_data_model.dart';
 import 'package:online/data/models/user_model.dart';
+import 'package:http/http.dart' as http;
 
 class ApiService {
   static const String baseUrl =
-      'https://ed26-2405-8180-903-130-2c35-5e2b-8e05-6058.ngrok-free.app/api';
+      'https://b240-2405-8180-903-130-5ab-a322-2503-b0df.ngrok-free.app/api';
 
   Future<String?> _getMemberToken() async {
     return await UserPreferences().getMemberToken();
@@ -62,6 +62,7 @@ class ApiService {
       }),
     );
 
+
     if (response.statusCode == 201) {
       final Map<String, dynamic> jsonResponse = jsonDecode(response.body);
       return RegisterResponse.fromJson(jsonResponse);
@@ -89,7 +90,6 @@ class ApiService {
       'Content-Type': 'application/json; charset=UTF-8',
       'Authorization': 'Bearer $token'
     });
-    print(response.body);
 
     if (response.statusCode == 200) {
       final Map<String, dynamic> jsonResponse = jsonDecode(response.body);
@@ -158,6 +158,7 @@ class ApiService {
               'updated_at': request.updatedAt
             }));
 
+
     if (response.statusCode == 201 || response.statusCode == 200) {
       final Map<String, dynamic> jsonResponse = jsonDecode(response.body);
       return CreditRequestResponse.fromJson(jsonResponse);
@@ -220,6 +221,7 @@ class ApiService {
     var response = await request.send();
     final responseBody = await response.stream.bytesToString();
 
+
     if (response.statusCode == 200 || response.statusCode == 201) {
       final Map<String, dynamic> jsonResponse = jsonDecode(responseBody);
       return PersonalDataResponse.fromJson(jsonResponse);
@@ -248,7 +250,6 @@ class ApiService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token',
     });
-
 
     if (response.statusCode == 200) {
       final Map<String, dynamic> jsonResponse = jsonDecode(response.body);

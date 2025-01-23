@@ -26,10 +26,10 @@ class CreditRequestResponse {
 class CreditRequest {
   int id;
   String kodePinjaman;
-  double jumlahPinjaman;
-  double bungaPinjaman;
+  String jumlahPinjaman;
+  String bungaPinjaman;
   String periodePinjaman;
-  int periodeSaatIni;
+  int? periodeSaatIni;
   String namaRekening;
   String namaBank;
   String nomorRekening;
@@ -47,7 +47,7 @@ class CreditRequest {
       required this.bungaPinjaman,
       required this.jumlahPinjaman,
       required this.periodePinjaman,
-      required this.periodeSaatIni,
+      this.periodeSaatIni,
       required this.namaRekening,
       required this.namaBank,
       required this.nomorRekening,
@@ -63,8 +63,8 @@ class CreditRequest {
     return CreditRequest(
         id: json['id'],
         kodePinjaman: json['kode_pinjaman'],
-        jumlahPinjaman: double.parse(json['jumlah_pinjaman'].toString()), // Parse string to double
-        bungaPinjaman: double.parse(json['bunga_pinjaman'].toString()), // Parse string to double
+        jumlahPinjaman: json['jumlah_pinjaman'],
+        bungaPinjaman: json['bunga_pinjaman'],
         periodePinjaman: json['periode_pinjaman'],
         periodeSaatIni: json['periode_saat_ini'],
         namaRekening: json['nama_rekening'],
