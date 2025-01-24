@@ -11,7 +11,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   static const String baseUrl =
-      'https://b240-2405-8180-903-130-5ab-a322-2503-b0df.ngrok-free.app/api';
+      'https://b4e1-2405-8180-903-130-51c1-6c53-35b0-e856.ngrok-free.app/api';
 
   Future<String?> _getMemberToken() async {
     return await UserPreferences().getMemberToken();

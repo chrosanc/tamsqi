@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:online/app/theme.dart';
+import 'package:online/core/constants/image_assets.dart';
+import 'package:online/core/constants/strings.dart';
 import 'package:online/core/utils/currency_utils.dart';
 import 'package:online/presentation/viewmodels/main/home/home_viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +29,22 @@ class UserPaymentScreen extends HookWidget {
       appBar: AppBar(
         title: const Center(child: Text('Pinjaman')),
       ),
-      body: Padding(
+      body: userData!.status == 'pending' && credit?.jumlahPinjaman == null ?
+      Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(ImageAssets.pending_image, height: 200,),
+            Text(
+              AppStrings.belumVerifikasi,
+              style: appTheme.textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
+      )
+          : Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -49,17 +66,3 @@ class UserPaymentScreen extends HookWidget {
   }
 }
 
-
-// Empty Credit
-// Column(
-// crossAxisAlignment: CrossAxisAlignment.center,
-// mainAxisAlignment: MainAxisAlignment.center,
-// children: [
-// Image.asset(ImageAssets.pending_image, height: 200,),
-// Text(
-// AppStrings.belumVerifikasi,
-// style: appTheme.textTheme.bodyMedium,
-// textAlign: TextAlign.center,
-// )
-// ],
-// ),
